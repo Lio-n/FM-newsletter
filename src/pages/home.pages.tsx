@@ -1,5 +1,7 @@
 import Body from "../ui/atoms/body.atom";
 import Button from "../ui/atoms/button.atom";
+import CheckListIcon from "../ui/atoms/icons/checkList.icon";
+import CheckSuccessIcon from "../ui/atoms/icons/checkSuccess.icon";
 import TextField from "../ui/atoms/textField.atom";
 import Title from "../ui/atoms/title.atom";
 
@@ -7,6 +9,8 @@ const HomePage = () => {
   return (
     <div>
       home.pages
+      <CheckListIcon></CheckListIcon>
+      <CheckSuccessIcon></CheckSuccessIcon>
       <Button>Subscribe to monthly newsletter</Button>
       <TextField name={"email"} label="Email" placeholder="Add your email" />
       <TextField name={"email"} label="Email" placeholder="Add your email" error={{ msg: "Invalid", hasError: true }} />
