@@ -1,2 +1,10 @@
 @tailwind base;
 @tailwind utilities;
+
+:root {
+  --color-tomato: hsl(4, 100%, 67%);
+}
+
+.text-tomato {
+  color: var(--color-tomato);
+}
