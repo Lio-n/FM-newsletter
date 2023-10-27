@@ -4,11 +4,3 @@
 :root {
   --color-tomato: hsl(4, 100%, 67%);
 }
-
-.text-tomato {
-  color: var(--color-tomato);
-}
-
-.color-tomato {
-  color: var(--color-tomato);
-}

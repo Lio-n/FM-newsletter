@@ -16,10 +16,10 @@ type TextColor = {
 };
 
 const TextColors: TextColor = {
-  white: "font-normal",
-  "slate-700": "text-slate-700",
-  "slate-800": "text-slate-800",
-  tomato: "text-tomato",
+  white: "text-white", // hsl(0, 0%, 100%)
+  "slate-700": "text-slate-700", // hsl(235, 18%, 26%)
+  "slate-800": "text-slate-800", // hsl(234, 29%, 20%)
+  tomato: "text-tomato", // hsl(4, 100%, 67%)
 };
 
 export { FontWeights, type FontWeight, TextColors, type TextColor };

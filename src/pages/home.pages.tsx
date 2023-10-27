@@ -1,5 +1,6 @@
 import Body from "../ui/atoms/body.atom";
 import Button from "../ui/atoms/button.atom";
+import TextField from "../ui/atoms/textField.atom";
 import Title from "../ui/atoms/title.atom";
 
 const HomePage = () => {
@@ -7,6 +8,8 @@ const HomePage = () => {
     <div>
       home.pages
       <Button>Subscribe to monthly newsletter</Button>
+      <TextField name={"email"} label="Email" placeholder="Add your email" />
+      <TextField name={"email"} label="Email" placeholder="Add your email" error={{ msg: "Invalid", hasError: true }} />
       <Title textWeight="bold" textColor="slate-700">
         Hello world!
       </Title>
