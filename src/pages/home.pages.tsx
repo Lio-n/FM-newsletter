@@ -1,10 +1,12 @@
 import Body from "../ui/atoms/body.atom";
+import Button from "../ui/atoms/button.atom";
 import Title from "../ui/atoms/title.atom";
 
 const HomePage = () => {
   return (
     <div>
       home.pages
+      <Button>Subscribe to monthly newsletter</Button>
       <Title textWeight="bold" textColor="slate-700">
         Hello world!
       </Title>

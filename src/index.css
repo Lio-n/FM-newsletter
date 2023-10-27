@@ -8,3 +8,7 @@
 .text-tomato {
   color: var(--color-tomato);
 }
+
+.color-tomato {
+  color: var(--color-tomato);
+}

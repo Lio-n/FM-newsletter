@@ -9,7 +9,7 @@ interface BodyProps {
 
 const Body = (props: BodyProps) => (
   <p
-    className={`text-base ${FontWeights[props.textWeight || "normal"]} ${TextColors[props.textColor || "white"]} ${props.className}`}
+    className={`text-base font-sans ${FontWeights[props.textWeight || "normal"]} ${TextColors[props.textColor || "white"]} ${props.className}`}
     children={props.children}
   />
 );
