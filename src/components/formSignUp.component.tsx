@@ -1,18 +1,21 @@
-import { ChangeEvent, FormEvent, FormEventHandler, FormHTMLAttributes, useState } from "react";
+import { ChangeEvent, FormEvent, FormEventHandler, FormHTMLAttributes, useContext, useState } from "react";
 import Button from "../ui/atoms/button.atom";
 import TextField, { ErrorInput } from "../ui/atoms/textField.atom";
 import validateEmail from "../validations/email.validation";
+import EmailContext from "../contexts/email.context";
 
 interface FormSignUpProps extends FormHTMLAttributes<HTMLFormElement> {}
 
 const FormSignUp = (props: FormSignUpProps) => {
+  const { setEmail } = useContext(EmailContext);
   const inputErrorDefault = { msg: null, hasError: false };
   const [inputError, setInputError] = useState<ErrorInput>(inputErrorDefault);
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const emailValue = e.currentTarget.value;
+    const emailValue = e.currentTarget.email.value;
+    setEmail(emailValue);
   };
 
   const handleOnValidateInputValue: FormEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
