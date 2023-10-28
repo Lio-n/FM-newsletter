@@ -3,7 +3,7 @@ import Phrase from "./phrase.atom";
 
 type ErrorInput = {
   hasError: boolean;
-  msg?: string;
+  msg?: string | null | undefined;
 };
 
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -29,4 +29,5 @@ const TextField = ({ label, name, type = "text", ...props }: TextFieldProps) => 
   </label>
 );
 
+export type { ErrorInput };
 export default TextField;

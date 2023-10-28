@@ -8,7 +8,7 @@ const CheckSuccessIcon = () => (
     </defs>
     <g fill="none">
       <circle cx="32" cy="32" r="32" fill="url(#a)" />
-      <path stroke="#FFF" stroke-width="4" d="m18.286 34.686 8.334 7.98 19.094-18.285" />
+      <path stroke="#FFF" strokeWidth="4" d="m18.286 34.686 8.334 7.98 19.094-18.285" />
     </g>
   </svg>
 );

@@ -1,14 +1,40 @@
-import { FormHTMLAttributes } from "react";
+import { ChangeEvent, FormEvent, FormEventHandler, FormHTMLAttributes, useState } from "react";
 import Button from "../ui/atoms/button.atom";
-import TextField from "../ui/atoms/textField.atom";
+import TextField, { ErrorInput } from "../ui/atoms/textField.atom";
+import validateEmail from "../validations/email.validation";
 
 interface FormSignUpProps extends FormHTMLAttributes<HTMLFormElement> {}
 
 const FormSignUp = (props: FormSignUpProps) => {
+  const inputErrorDefault = { msg: null, hasError: false };
+  const [inputError, setInputError] = useState<ErrorInput>(inputErrorDefault);
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const emailValue = e.currentTarget.value;
+  };
+
+  const handleOnValidateInputValue: FormEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+
+    if (!e.currentTarget.value) {
+      setInputError(inputErrorDefault);
+      return;
+    }
+
+    const errorMessage = "Valid Email required";
+    const isAValidEmail = validateEmail(e.currentTarget.value);
+
+    !isAValidEmail ? setInputError({ msg: errorMessage, hasError: true }) : setInputError(inputErrorDefault);
+  };
+
   return (
-    <form {...props}>
-      <TextField name="email" placeholder="email@company.com" label="Email" />
-      <Button className="mt-6">Subscribe to monthly newsletter</Button>
+    <form {...props} onSubmit={handleSubmit}>
+      <TextField onChange={handleOnValidateInputValue} name="email" placeholder="email@company.com" label="Email" type="text" error={inputError} />
+      <Button className="mt-6" disabled={inputError.hasError}>
+        Subscribe to monthly newsletter
+      </Button>
     </form>
   );
 };
