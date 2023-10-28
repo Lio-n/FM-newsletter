@@ -43,7 +43,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Repository : FM-newsletter](https://github.com/Lio-n/FM-newsletter)
-- Live Site URL: [Github Pages](https://your-live-site-url.com)
+- Live Site URL: [Vercel](https://fm-newsletter-nine.vercel.app)
 
 ## My process
 
