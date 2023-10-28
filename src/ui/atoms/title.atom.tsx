@@ -5,7 +5,7 @@ interface TitleProps extends BodyProps {}
 
 const Title = (props: TitleProps) => (
   <h1
-    className={`text-7xl font-sans ${FontWeights[props.textWeight || "normal"]} ${TextColors[props.textColor || "white"]} ${props.className}`}
+    className={`text-4xl font-sans ${FontWeights[props.textWeight || "normal"]} ${TextColors[props.textColor || "white"]} ${props.className}`}
     children={props.children}
   />
 );

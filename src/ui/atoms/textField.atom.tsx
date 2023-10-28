@@ -13,7 +13,7 @@ interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const TextField = ({ label, name, type = "text", ...props }: TextFieldProps) => (
-  <label htmlFor={name} className="flex flex-col max-w-xs w-full gap-2">
+  <label htmlFor={name} className="flex flex-col max-w-lg w-full gap-2">
     <div className="flex justify-between">
       {label && <Phrase children={label} className="text-sm" textWeight="bold" textColor="slate-800" />}
       {props?.error?.msg && <Phrase children={props?.error.msg} className="text-sm" textWeight="bold" textColor="tomato" />}
