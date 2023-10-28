@@ -4,7 +4,7 @@ interface BodyProps {
   textWeight?: keyof FontWeight;
   textColor?: keyof TextColor;
   className?: string;
-  children?: string;
+  children?: string | JSX.Element[] | JSX.Element;
 }
 
 const Body = (props: BodyProps) => (

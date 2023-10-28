@@ -3,11 +3,13 @@ import Button from "../ui/atoms/button.atom";
 import TextField, { ErrorInput } from "../ui/atoms/textField.atom";
 import validateEmail from "../validations/email.validation";
 import EmailContext from "../contexts/email.context";
+import { useNavigate } from "react-router-dom";
 
 interface FormSignUpProps extends FormHTMLAttributes<HTMLFormElement> {}
 
 const FormSignUp = (props: FormSignUpProps) => {
   const { setEmail } = useContext(EmailContext);
+  const navigate = useNavigate();
   const inputErrorDefault = { msg: null, hasError: false };
   const [inputError, setInputError] = useState<ErrorInput>(inputErrorDefault);
 
@@ -15,7 +17,9 @@ const FormSignUp = (props: FormSignUpProps) => {
     e.preventDefault();
 
     const emailValue = e.currentTarget.email.value;
+    if (!emailValue) return;
     setEmail(emailValue);
+    navigate("/thanks");
   };
 
   const handleOnValidateInputValue: FormEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
